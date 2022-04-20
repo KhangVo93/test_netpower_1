@@ -1,7 +1,7 @@
 import { Button, Pagination } from "@mui/material"
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Container, Row } from "reactstrap"
+import { Col, Container, Row } from "reactstrap"
 import Create from "./Create"
 import Delete from "./Delete"
 import Update from "./Update"
@@ -52,6 +52,11 @@ const Task = () => {
                 <div style={{ textAlign: 'center' }}>
                     <h1>Test</h1>
                 </div>
+                <Row>
+                    <Col xs='auto'>
+                        <Button style={{ marginRight: 10 }} onClick={onClickCreate} color="success" variant='contained'>Create</Button>
+                    </Col>
+                </Row>
                 <Row className="mt-2 p-2">
 
                     <table style={{ width: '100%', textAlign: 'center' }}>
@@ -78,7 +83,6 @@ const Task = () => {
                                             <img src={item.avatar} alt='avatar' style={{ width: 120, height: 120 }} />
                                         </td>
                                         <td>
-                                            <Button style={{ marginRight: 10 }} onClick={onClickCreate} color="success" variant='contained'>Create</Button>
                                             <Button style={{ marginRight: 10 }} onClick={() => onClickDelete(item.id)} color="error" variant='contained'>Delete</Button>
                                             <Button style={{ marginRight: 10 }} onClick={() => onClickUpdate(item.id)} color="warning" variant='contained'>Update</Button>
                                         </td>
